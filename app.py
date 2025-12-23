@@ -177,5 +177,12 @@ if st.session_state.has_run:
                 st.download_button("📥 Click here to Save PDF", f, file_name="MoZ_Strategic_Report.pdf")
         except Exception as e:
             st.error(f"Error generating PDF: {e}. Ensure Kaleido is installed.")
+
 else:
+    # --- LANDING PAGE (With New Image) ---
+    if os.path.exists("assets/mall_render.jpg"):
+        st.image("assets/mall_render.jpg", use_container_width=True)
+    else:
+        st.warning("⚠️ Image not found: assets/mall_render.jpg")
+
     st.info("👈 Set parameters and click **'Run'** to generate the analysis.")
